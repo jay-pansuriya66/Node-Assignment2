@@ -1,2 +1,4 @@
 this is file 2 
 and i'm learing Git.
+
+ading more content in file 2.
