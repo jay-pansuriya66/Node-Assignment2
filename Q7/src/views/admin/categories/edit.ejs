@@ -1,0 +1,20 @@
+<%- include('../../partials/header', { title: 'Edit Category' }) %>
+<section class="card">
+  <h2>Edit Category</h2>
+  <form method="post" action="/admin/categories/<%= cat.id %>" class="form">
+    <label>Name
+      <input type="text" name="name" value="<%= cat.name %>" required>
+    </label>
+    <label>Parent (optional)
+      <select name="parentId">
+        <option value="" <%= !cat.parentId ? 'selected' : '' %>>-- No Parent (Top level) --</option>
+        <% parents.forEach(p => { %>
+          <option value="<%= p.id %>" <%= cat.parentId === p.id ? 'selected' : '' %>><%= p.name %></option>
+        <% }) %>
+      </select>
+    </label>
+    <button type="submit" class="btn">Save</button>
+    <a class="btn secondary" href="/admin/categories">Cancel</a>
+  </form>
+</section>
+<%- include('../../partials/footer') %>

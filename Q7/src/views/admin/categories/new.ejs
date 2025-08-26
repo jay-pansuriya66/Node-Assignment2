@@ -1,0 +1,20 @@
+<%- include('../../partials/header', { title: 'New Category' }) %>
+<section class="card">
+  <h2>New Category</h2>
+  <form method="post" action="/admin/categories" class="form">
+    <label>Name
+      <input type="text" name="name" required>
+    </label>
+    <label>Parent (optional, choose to make this a subcategory)
+      <select name="parentId">
+        <option value="">-- No Parent (Top level) --</option>
+        <% parents.forEach(p => { %>
+          <option value="<%= p.id %>"><%= p.name %></option>
+        <% }) %>
+      </select>
+    </label>
+    <button type="submit" class="btn">Create</button>
+    <a class="btn secondary" href="/admin/categories">Cancel</a>
+  </form>
+</section>
+<%- include('../../partials/footer') %>

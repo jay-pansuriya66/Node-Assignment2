@@ -1,0 +1,14 @@
+<%- include('../partials/header', { title: p.name }) %>
+<section class="card">
+  <h2><%= p.name %></h2>
+  <p class="price">₹ <%= p.price.toFixed(2) %></p>
+  <% if (p.description) { %>
+    <blockquote><%= p.description %></blockquote>
+  <% } %>
+  <form method="post" action="/cart/add" class="flex">
+    <input type="hidden" name="id" value="<%= p.id %>">
+    <input type="number" name="qty" min="1" value="1" style="width:80px">
+    <button class="btn" type="submit">Add to Cart</button>
+  </form>
+</section>
+<%- include('../partials/footer') %>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Q7 Shop' %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="/">Q7 Shop</a></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/cart">Cart (<%= typeof cartCount !== 'undefined' ? cartCount : 0 %>)</a>
+    <a href="/admin">Admin</a>
+  </nav>
+</header>
+<main class="container">

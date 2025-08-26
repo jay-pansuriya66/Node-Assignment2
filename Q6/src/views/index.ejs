@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Q6 Utilities' %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Q6 Utilities</div>
+  </header>
+
+  <main class="container">
+    <% if (error) { %>
+      <div class="flash error"><%= error %></div>
+    <% } %>
+
+    <section class="card">
+      <h2>Backend Weather (Open-Meteo)</h2>
+      <form action="/weather" method="get" class="form">
+        <label>City name
+          <input type="text" name="q" value="<%= query %>" placeholder="e.g., London" required>
+        </label>
+        <button type="submit">Get Weather</button>
+      </form>
+      <% if (weather) { %>
+        <div class="weather">
+          <p><strong>City:</strong> <%= weather.city %> (<%= weather.latitude %>, <%= weather.longitude %>)</p>
+          <p><strong>Temperature:</strong> <%= weather.temperatureC %> °C</p>
+          <p><strong>Wind:</strong> <%= weather.windSpeed %> km/h @ <%= weather.windDirection %>°</p>
+          <p><strong>Time:</strong> <%= weather.time %></p>
+        </div>
+      <% } %>
+    </section>
+
+    <section class="card">
+      <h2>Frontend Joke (Chuck Norris API)</h2>
+      <p>Click to fetch a random joke from the public API (no key required).</p>
+      <button id="jokeBtn">Get Joke</button>
+      <blockquote id="jokeText" style="margin-top:10px"></blockquote>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

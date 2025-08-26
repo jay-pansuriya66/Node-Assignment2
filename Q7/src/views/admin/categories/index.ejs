@@ -1,0 +1,25 @@
+<%- include('../../partials/header', { title: 'Categories' }) %>
+<section class="card">
+  <div class="flex" style="justify-content:space-between">
+    <h2>Categories</h2>
+    <a class="btn" href="/admin/categories/new">+ New Category</a>
+  </div>
+  <table class="table">
+    <thead><tr><th>Name</th><th>Parent</th><th>Actions</th></tr></thead>
+    <tbody>
+    <% categories.forEach(c => { %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= (categories.find(x => x.id === c.parentId) || {}).name || '-' %></td>
+        <td class="flex">
+          <a class="btn secondary" href="/admin/categories/<%= c.id %>/edit">Edit</a>
+          <form method="post" action="/admin/categories/<%= c.id %>/delete" onsubmit="return confirm('Delete this category? Children and products under it will be removed.')">
+            <button class="btn danger" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</section>
+<%- include('../../partials/footer') %>

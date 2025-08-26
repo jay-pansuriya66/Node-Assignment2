@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title || 'Employee App' %></title>
+  <link rel="stylesheet" href="/public/style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="/public/app.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">Q5 Employee</div>
+    <div class="links">
+      <% if (typeof user !== 'undefined' && user) { %>
+        <a href="/profile" class="<%= currentPath && currentPath.startsWith('/profile') ? 'active' : '' %>">Profile</a>
+        <a href="/leaves" class="<%= currentPath && currentPath.startsWith('/leaves') ? 'active' : '' %>">Leaves</a>
+        <form class="inline" action="/logout" method="post">
+          <button type="submit" class="btn">Logout</button>
+        </form>
+      <% } else { %>
+        <a href="/login" class="btn">Login</a>
+      <% } %>
+    </div>
+  </nav>
+  <main class="container">
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="alert error"><%= error %></div>
+    <% } %>

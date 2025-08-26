@@ -1,0 +1,20 @@
+<%- include('../partials/head', { title: 'Apply Leave' }) %>
+<div class="card">
+  <h2>Apply for Leave</h2>
+  <form method="post" action="/leaves">
+    <label>Date</label>
+    <input type="date" name="date" required />
+
+    <label>Reason</label>
+    <textarea name="reason" rows="3" required></textarea>
+
+    <label>Grant (for demo)</label>
+    <select name="grant">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+<%- include('../partials/foot') %>

@@ -1,0 +1,25 @@
+<%- include('../../partials/header', { title: 'Edit Product' }) %>
+<section class="card">
+  <h2>Edit Product</h2>
+  <form method="post" action="/admin/products/<%= prod.id %>" class="form">
+    <label>Name
+      <input type="text" name="name" value="<%= prod.name %>" required>
+    </label>
+    <label>Price
+      <input type="number" name="price" step="0.01" min="0" value="<%= prod.price %>" required>
+    </label>
+    <label>Subcategory
+      <select name="categoryId" required>
+        <% subcats.forEach(c => { %>
+          <option value="<%= c.id %>" <%= prod.categoryId === c.id ? 'selected' : '' %>><%= c.name %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label>Description
+      <textarea name="description" rows="3"><%= prod.description %></textarea>
+    </label>
+    <button class="btn" type="submit">Save</button>
+    <a class="btn secondary" href="/admin/products">Cancel</a>
+  </form>
+</section>
+<%- include('../../partials/footer') %>

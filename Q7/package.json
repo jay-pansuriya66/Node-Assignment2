@@ -1,0 +1,19 @@
+{
+  "name": "q7-shop-cart",
+  "version": "1.0.0",
+  "description": "Q7: Shopping cart with admin and user site; 2-level categories and products (Node, Express, EJS)",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

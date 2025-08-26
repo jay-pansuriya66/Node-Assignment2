@@ -1,0 +1,15 @@
+<header class="topbar">
+  <div class="brand">ERP Admin</div>
+  <nav>
+    <% if (admin) { %>
+      <a href="/">Dashboard</a>
+      <a href="/employees">Employees</a>
+      <form action="/logout" method="post" style="display:inline">
+        <button type="submit" class="linklike">Logout (<%= admin.email %>)</button>
+      </form>
+    <% } else { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    <% } %>
+  </nav>
+</header>

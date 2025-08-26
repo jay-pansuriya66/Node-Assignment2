@@ -1,0 +1,13 @@
+<%- include('partials/head', { title: 'Login' }) %>
+<div class="card">
+  <h2>Employee Login</h2>
+  <form method="post" action="/login">
+    <label>Employee ID</label>
+    <input type="text" name="employeeId" required />
+    <label>Password</label>
+    <input type="password" name="password" required />
+    <button type="submit" class="btn">Login</button>
+  </form>
+  <p>Seed user: <code>E1001 / password123</code></p>
+</div>
+<%- include('partials/foot') %>

@@ -1,0 +1,37 @@
+<%- include('../partials/header', { title: 'Employees' }) %>
+<section class="card">
+  <div class="row between center">
+    <h2>Employees</h2>
+    <a class="btn" href="/employees/new">+ New</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Net Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employees.forEach(e => { %>
+        <tr>
+          <td><%= e.empId %></td>
+          <td><a href="/employees/<%= e._id %>"><%= e.name %></a></td>
+          <td><%= e.email %></td>
+          <td><%= e.role %></td>
+          <td>₹ <%= e.netSalary.toFixed(2) %></td>
+          <td>
+            <a class="btn small" href="/employees/<%= e._id %>/edit">Edit</a>
+            <form method="post" action="/employees/<%= e._id %>/delete" style="display:inline" onsubmit="return confirm('Delete this employee?')">
+              <button class="btn danger small" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+<%- include('../partials/footer') %>

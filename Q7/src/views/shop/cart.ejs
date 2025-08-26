@@ -1,0 +1,44 @@
+<%- include('../partials/header', { title: 'Your Cart' }) %>
+<section class="card">
+  <h2>Your Cart</h2>
+  <% if (cart.length === 0) { %>
+    <p>Your cart is empty.</p>
+  <% } else { %>
+    <table class="table">
+      <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Subtotal</th><th>Actions</th></tr></thead>
+      <tbody>
+        <% cart.forEach(it => { %>
+          <tr>
+            <td><%= it.name %></td>
+            <td>₹ <%= it.price.toFixed(2) %></td>
+            <td>
+              <form method="post" action="/cart/update" class="flex">
+                <input type="hidden" name="id" value="<%= it.id %>">
+                <input type="number" name="qty" min="0" value="<%= it.qty %>" style="width:80px">
+                <button class="btn secondary" type="submit">Update</button>
+              </form>
+            </td>
+            <td>₹ <%= (it.price * it.qty).toFixed(2) %></td>
+            <td>
+              <form method="post" action="/cart/update">
+                <input type="hidden" name="id" value="<%= it.id %>">
+                <input type="hidden" name="qty" value="0">
+                <button class="btn danger" type="submit">Remove</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <p style="text-align:right"><strong>Total:</strong> ₹ <%= total.toFixed(2) %></p>
+    <div class="flex">
+      <form method="post" action="/cart/clear">
+        <button class="btn secondary" type="submit">Clear Cart</button>
+      </form>
+      <form method="post" action="/checkout">
+        <button class="btn" type="submit">Checkout</button>
+      </form>
+    </div>
+  <% } %>
+</section>
+<%- include('../partials/footer') %>

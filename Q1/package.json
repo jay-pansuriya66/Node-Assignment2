@@ -1,0 +1,22 @@
+{
+  "name": "q1-registration-form",
+  "version": "1.0.0",
+  "description": "User registration form with validation, file upload (single/multiple), display, and download route using Express, EJS, Multer, and express-validator",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "start:3001": "cmd /c \"set PORT=3001 && node app.js\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-validator": "^7.2.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

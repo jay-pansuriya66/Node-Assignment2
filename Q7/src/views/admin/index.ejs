@@ -1,0 +1,14 @@
+<%- include('../partials/header', { title: 'Admin' }) %>
+<section class="card">
+  <h2>Admin Dashboard</h2>
+  <div class="flex">
+    <a class="btn" href="/admin/categories">Manage Categories</a>
+    <a class="btn" href="/admin/products">Manage Products</a>
+  </div>
+</section>
+<section class="card">
+  <h3>Quick Stats</h3>
+  <p>Categories: <strong><%= categories.length %></strong></p>
+  <p>Products: <strong><%= products.length %></strong></p>
+</section>
+<%- include('../partials/footer') %>

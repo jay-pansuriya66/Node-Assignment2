@@ -1,0 +1,13 @@
+<%- include('partials/head', { title: 'My Profile' }) %>
+<div class="card">
+  <h2>My Profile</h2>
+  <ul class="list">
+    <li><strong>Name:</strong> <%= user.name %></li>
+    <li><strong>Employee ID:</strong> <%= user.employeeId %></li>
+    <li><strong>Email:</strong> <%= user.email %></li>
+    <li><strong>Department:</strong> <%= user.department || '-' %></li>
+    <li><strong>Join Date:</strong> <%= new Date(user.joinDate).toDateString() %></li>
+  </ul>
+  <a href="/leaves/new" class="btn">Apply for Leave</a>
+</div>
+<%- include('partials/foot') %>

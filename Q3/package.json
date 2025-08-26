@@ -1,0 +1,30 @@
+{
+  "name": "q3-express-redis-login",
+  "version": "1.0.0",
+  "description": "Express login app with Redis session store",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "express",
+    "redis",
+    "session",
+    "login"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "connect-redis": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.1",
+    "morgan": "^1.10.0",
+    "redis": "^4.6.13"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

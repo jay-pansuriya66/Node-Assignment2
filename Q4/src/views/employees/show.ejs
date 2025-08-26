@@ -1,0 +1,17 @@
+<%- include('../partials/header', { title: 'Employee Details' }) %>
+<section class="card">
+  <div class="row between center">
+    <h2><%= emp.name %> (<%= emp.empId %>)</h2>
+    <a class="btn" href="/employees">Back</a>
+  </div>
+  <p><b>Email:</b> <%= emp.email %></p>
+  <p><b>Role:</b> <%= emp.role %></p>
+  <h3>Salary</h3>
+  <ul>
+    <li>Base: ₹ <%= emp.baseSalary.toFixed(2) %></li>
+    <li>Allowances: ₹ <%= emp.allowances.toFixed(2) %></li>
+    <li>Deductions: ₹ <%= emp.deductions.toFixed(2) %></li>
+    <li><b>Net:</b> ₹ <%= emp.netSalary.toFixed(2) %></li>
+  </ul>
+</section>
+<%- include('../partials/footer') %>

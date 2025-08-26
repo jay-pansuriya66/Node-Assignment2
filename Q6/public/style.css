@@ -1,0 +1,12 @@
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;margin:0;background:#f6f7fb;color:#222}
+.container{max-width:900px;margin:24px auto;padding:0 16px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#111;color:#fff}
+.topbar .brand{font-weight:700}
+.card{background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 4px 16px rgba(17,17,26,0.08),0 8px 32px rgba(17,17,26,0.05)}
+.form label{display:block;margin:.5rem 0}
+.form input{padding:.5rem .6rem;border:1px solid #ccc;border-radius:6px;width:100%;max-width:360px}
+button, .btn{cursor:pointer;background:#2563eb;color:#fff;border:none;padding:.55rem .9rem;border-radius:8px}
+.flash{padding:.6rem .8rem;border-radius:6px;margin:12px 0}
+.flash.error{background:#fee2e2;color:#991b1b}
+.weather p{margin:.25rem 0}
+blockquote{background:#f3f4f6;border-left:4px solid #2563eb;padding:.6rem .8rem;border-radius:6px}

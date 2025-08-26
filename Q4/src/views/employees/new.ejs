@@ -1,0 +1,28 @@
+<%- include('../partials/header', { title: 'New Employee' }) %>
+<section class="card">
+  <h2>New Employee</h2>
+  <form class="form" method="post" action="/employees">
+    <label>Name
+      <input name="name" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" required>
+    </label>
+    <label>Role
+      <input name="role" value="Employee">
+    </label>
+    <div class="row gap">
+      <label>Base Salary
+        <input type="number" step="0.01" name="baseSalary" required>
+      </label>
+      <label>Allowances
+        <input type="number" step="0.01" name="allowances" value="0">
+      </label>
+      <label>Deductions
+        <input type="number" step="0.01" name="deductions" value="0">
+      </label>
+    </div>
+    <button type="submit">Create</button>
+  </form>
+</section>
+<%- include('../partials/footer') %>
